@@ -395,7 +395,7 @@ with left_column_1:
     st.text(f"xG/90: {xGper90}   Shots/90: {shots90}   xG/Shot: {xGperShot}")
     st.dataframe(df_selection[list(df_selection.columns)[:9]].drop(columns=['Pos']).sort_values(by=['xG'],ascending=False).style.background_gradient(cmap='Greens').set_precision(2))
 
-buildup = ['Player Name','Squad','Games', 'Competition','xG'] + list(df_selection.columns)[10:18]
+buildup = ['Player Name','Squad','Competition','Games','xG'] + list(df_selection.columns)[10:18]
 
 with right_column_1:
     st.header('Build Up (Per 90 min)')
@@ -407,8 +407,8 @@ with right_column_1:
 
 left_column_2,right_column_2 = st.columns(2)
 
-defending = ['Player Name','Squad','Games','Competition','xG'] + list(df_selection.columns)[18:24]
-pressing = ['Player Name','Squad','Games','Competition','xG'] + list(df_selection.columns)[24:30]
+defending = ['Player Name','Squad','Competition','Games','xG'] + list(df_selection.columns)[18:24]
+pressing = ['Player Name','Squad','Competition','Games','xG'] + list(df_selection.columns)[24:30]
 
 with left_column_2:
     st.header('Defending (Per 90 min)')
@@ -426,7 +426,7 @@ with right_column_2:
 # ----- POSSESION TABLES ------
 left_column_3,right_column_3 = st.columns(2)
 
-possession = ['Player Name','Squad','Games','Competition','xG'] + list(df_selection.columns)[31:35]
+possession = ['Player Name','Squad','Competition','Games','xG'] + list(df_selection.columns)[31:35]
 
 with left_column_3:
     st.header('Attacking Position (Per 90 min)')
